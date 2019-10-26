@@ -1,0 +1,181 @@
+.header  {
+    border: 2px solid;
+    background: #52c09b;
+    border-radius: 35px;
+    margin-bottom: 0;
+    color: #333;
+} 
+
+.main-content {
+    /** подключает flex-контекст для всех его непосредственных потомков  **/
+    display: flex;
+    display: -webkit-flex;
+    display: -moz-flex;
+    /** Устанавливает главную ось main-axis, определяя тем самым направление для flex-элементов, размещаемых в контейнере.  **/
+    flex-direction: row;
+    -webkit-flex-direction: row;
+    -moz-flex-direction: row; 
+    /** Задаём ширину и выравниваем этот блок по центру  **/
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+.main-content .mynav {
+    /**  Задаём ширину 20% **/
+    flex: 2;
+    -webkit-flex: 2;
+    -moz-flex: 2;
+    /** Задаём порядок - элемент является первым  **/
+    order: 0;
+    -webkit-order: 0;
+    -moz-flex-order: 0;
+}
+
+.main-content .news {
+    /**  Задаём ширину 60% **/
+    flex: 6;
+    -webkit-flex: 6;
+    -moz-flex: 6;
+    /** Задаём порядок - элемент является вторым  **/
+    order: 1;
+    -webkit-order: 1;
+    -moz-flex-order: 1;
+}
+
+.main-content .widgets {
+    /**  Задаём ширину 20% **/
+    flex: 2;
+    -webkit-flex: 2;
+    -moz-flex: 2;
+    /** Задаём порядок - элемент является третьим  **/
+    order: 2;
+    -webkit-order: 2;
+    -moz-flex-order: 2;
+    /** Устанавливает главную ось main-axis, определяя тем самым направление для flex-элементов, размещаемых в контейнере.  **/
+    flex-direction: column;
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .main-content {
+        /** подключает flex-контекст для всех его непосредственных потомков  **/
+        display: flex;
+        display: -webkit-flex;
+        display: -moz-flex;
+        /** Устанавливает главную ось main-axis, определяя тем самым направление для flex-элементов, размещаемых в контейнере.  **/
+        flex-direction: row;
+        -webkit-flex-direction: row;
+        -moz-flex-direction: row;
+    }
+    .main-content .mynav {
+        /** Ширина навигации - оставлено прожнее значение  **/
+        flex: 2;
+        -webkit-flex: 2;
+        -moz-flex: 2;
+    }
+    .main-content .widgets {
+        /** Ширина виджетов - уменьшена, чтобы осталось больше места на осной раздел  **/
+        flex: 1;
+        -webkit-flex: 1;
+        -moz-flex: 1;
+        /** Обрать не очень важные элементы - хорошее решение. Благодаря этому лучше будет восприниматься основной контент, для которого останется больше места  **/
+        display: none;
+    }
+    .main-content .news {
+        /** Ширина основного раздела - увеличина за счёт виджетов, которые мы убралис с экрана  **/
+        flex: 8;
+        -webkit-flex: 8;
+        -moz-flex: 8;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .main-content {
+        /** подключает flex-контекст для всех его непосредственных потомков  **/
+        display: flex;
+        display: -webkit-flex;
+        display: -moz-flex;
+        /** Устанавливает главную ось main-axis, определяя тем самым направление для flex-элементов, размещаемых в контейнере.  **/
+        flex-direction: column;
+        -webkit-flex-direction: column;
+        -moz-flex-direction: column;
+    }
+    .main-content .mynav {
+        /** Задаём порядок - элемент становится третьим  **/
+        order: 2;
+        -webkit-order: 2;
+        -moz-flex-order: 2;
+    }
+
+    .main-content .news {
+        /** Задаём порядок - элемент становится первым  **/
+        order: 0;
+        -webkit-order: 0;
+        -moz-flex-order: 0;
+    }
+
+    .main-content .widgets {
+        /** Задаём порядок - элемент становится вторым  **/
+        order: 1;
+        -webkit-order: 1;
+        -moz-flex-order: 1;
+    }
+}
+
+.topbar {
+    padding: 0;
+}
+
+.topbar-inner {
+    /** подключает flex-контекст для всех его непосредственных потомков  **/
+    display: flex;
+    display: -webkit-flex;
+    display: -moz-flex;
+    /** Устанавливает главную ось main-axis, определяя тем самым направление для flex-элементов, размещаемых в контейнере.  **/
+    flex-direction: column;
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+}
+
+/** Меняем расположение логотипа - переносим его в центр.  **/
+.topbar-inner .logo {     
+    order: 0;
+    -webkit-order: 0;
+    -moz-flex-order: 0;
+}
+
+.topbar-inner .logo img {
+    padding: 1em;
+    display: block;
+    margin: 0 auto;
+    position: relative;
+    float: none;
+}
+
+.topbar-inner ul.navbar {
+    /** подключает flex-контекст для всех его непосредственных потомков  **/
+    display: flex;
+    display: -webkit-flex;
+    display: -moz-flex;
+
+    /** Устанавливает главную ось main-axis, определяя тем самым направление для flex-элементов, размещаемых в контейнере.  **/
+    flex-direction: column;
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;    
+
+    order: 1;
+    -webkit-order: 1;
+    -moz-flex-order: 1;  
+
+    /**  **/
+    background-color: #c1c7b3;
+    box-shadow: inset 0px 1px 0px #41560e;
+}
+.topbar-inner ul.navbar li {
+    padding: 0;
+
+    flex: 1;
+    -webkit-flex: 1;
+    -moz-flex: 1;
+}
