@@ -1,11 +1,3 @@
-.header  {
-    border: 2px solid;
-    background: #52c09b;
-    border-radius: 35px;
-    margin-bottom: 0;
-    color: #333;
-} 
-
 .main-content {
     /** подключает flex-контекст для всех его непосредственных потомков  **/
     display: flex;
@@ -79,8 +71,6 @@
         flex: 1;
         -webkit-flex: 1;
         -moz-flex: 1;
-        /** Обрать не очень важные элементы - хорошее решение. Благодаря этому лучше будет восприниматься основной контент, для которого останется больше места  **/
-        display: none;
     }
     .main-content .news {
         /** Ширина основного раздела - увеличина за счёт виджетов, которые мы убралис с экрана  **/
@@ -103,31 +93,32 @@
     }
     .main-content .mynav {
         /** Задаём порядок - элемент становится третьим  **/
-        order: 2;
-        -webkit-order: 2;
-        -moz-flex-order: 2;
-    }
-
-    .main-content .news {
-        /** Задаём порядок - элемент становится первым  **/
         order: 0;
         -webkit-order: 0;
         -moz-flex-order: 0;
     }
 
-    .main-content .widgets {
-        /** Задаём порядок - элемент становится вторым  **/
+    .main-content .news {
+        /** Задаём порядок - элемент становится первым  **/
         order: 1;
         -webkit-order: 1;
         -moz-flex-order: 1;
     }
+
+    .main-content .widgets {
+        /** Задаём порядок - элемент становится вторым  **/
+        order: 2;
+        -webkit-order: 2;
+        -moz-flex-order: 2;
+    }
 }
 
-.topbar {
+.wrapper {
     padding: 0;
+
 }
 
-.topbar-inner {
+.header {
     /** подключает flex-контекст для всех его непосредственных потомков  **/
     display: flex;
     display: -webkit-flex;
@@ -136,16 +127,19 @@
     flex-direction: column;
     -webkit-flex-direction: column;
     -moz-flex-direction: column;
+    
+    max-width: 1140px;
+    margin: 0 auto;
 }
 
 /** Меняем расположение логотипа - переносим его в центр.  **/
-.topbar-inner .logo {     
+.header .logo {     
     order: 0;
     -webkit-order: 0;
     -moz-flex-order: 0;
 }
 
-.topbar-inner .logo img {
+.header .logo img {
     padding: 1em;
     display: block;
     margin: 0 auto;
@@ -153,7 +147,7 @@
     float: none;
 }
 
-.topbar-inner ul.navbar {
+.header ul.navbar {
     /** подключает flex-контекст для всех его непосредственных потомков  **/
     display: flex;
     display: -webkit-flex;
@@ -172,10 +166,33 @@
     background-color: #c1c7b3;
     box-shadow: inset 0px 1px 0px #41560e;
 }
-.topbar-inner ul.navbar li {
+.header ul.navbar li {b
     padding: 0;
 
     flex: 1;
     -webkit-flex: 1;
     -moz-flex: 1;
+}
+
+.header  {
+    border: 2px solid;
+    background: #52c09b;
+    border-radius: 35px;
+    margin-bottom: 0;
+    color: #333;
+} 
+
+.mynav {
+    border: 2px solid;
+    background: #72cd25;
+}
+
+.news {
+    border: 2px solid;
+    background: #2be7ce;
+}
+
+.widgets {
+    border: 2px solid;
+    background: #5aa3d4;
 }
